@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int main(){
+int num = 5;
+int n;
+cout<<"Enter the number of elements ";
+cin>>n;
+int a[num-1];
+int sum,max;
+
+for (int i=0;i<num; i++){
+cout<<endl<<"Element= ";
+cin>>a[i%num];
+}
+
+sum= 0;
+max= 0;
+int x;
+for (int i=num;i<n;i++){
+cout<<endl<<"Element= ";
+cin>>x;
+if (a[i%num]>max) max=a[i%num];
+if (x+max>sum) sum=x+max;
+a[i%num]= x;
+}
+
+cout<<endl<<"Sum= "<<sum;
+return 0;
+}
+
