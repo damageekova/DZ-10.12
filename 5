@@ -1,0 +1,32 @@
+#include <cmath>
+#include <iostream>
+using namespace std;
+
+/*Напишите программу, которая находит количество сократимых правильных дробей вида m/n для заданного знаменателя .*/
+
+int gcd(int a, int b){
+    a = abs(a), b = abs(b);
+    if (b == 0)return a;
+    else return gcd(b, a%b);
+}
+int sokrdrob(int a, int b){
+    int x = gcd(a, b);
+    a /= x;
+    b /= x;
+    return a;
+}
+
+
+int main(){
+  int a, b;
+  cout<<"Enter the denominator "<<endl;
+  cin>>b;
+  int k=0;
+  a=0;
+   while (a<sqrt(b*b)){
+  if (sokrdrob(a,b)!=a||a==0) k=k+1;
+  a++;
+  }
+  cout<<"Their number is  "<<k;
+  return 0;
+}
