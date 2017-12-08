@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main(){   
+    int n,t;
+    cout<<"Enter the number of roads: ";
+    cin>>n;
+    cout<<endl<<"Enter the time of every road: ";
+    cin>>t;
+    int a,b;
+    int sx=0;
+    int sy=0;
+    int ss=0;
+    int s=0;
+    for (int i=0;i<n;i++){
+            cout<<endl<<"Enter the time of AiAi+1 and BiBi+1: ";
+            cin>>a>>b;
+            sx=sx+a;
+            sy=sy+b;
+            ss=sx+t;
+            if (sy<ss) s=sy;
+            else sy=ss;
+    }
+cout<<"Minimum time is "<<s;
+return 0;
+}
+
