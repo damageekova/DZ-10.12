@@ -13,7 +13,7 @@ cout<<endl<<"Element= ";
 cin>>a[i%num];
 }
 int x;
-for (int i=num;i<n-1;i++){
+for (int i=num;i<n;i++){
 cout<<endl<<"Element= ";
 cin>>x;
 if (a[i%num]<max) max=a[i%num];
