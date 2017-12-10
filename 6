@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+void Farey(int n, bool asc){
+int   a, b, c, d, ta, tb, k;
+  if (asc) {
+    a=1; b=n; c=1; d=n-1;
+  } else{
+    a=n-1; b=n; c=n-2; d=n-1;
+  }
+  while (((asc)&&(c<=n))|| ((!asc)&&(a>0))) {
+    cout<<a<<'/'<<b<<endl;
+    k=(n+b)/d;
+    ta=a; tb=b; a=c; b=d; c=k*c-ta; d=k*d-tb;
+}
+}
+void Farey2(int n, bool asc){
+int   a, b, c, d, ta, tb, k;
+  if (asc) {
+    a=1; b=n; c=1; d=n-1;
+  } else{
+    a=n-1; b=n; c=n-2; d=n-1;
+  }
+  while (((asc)&&(c<=n))|| ((!asc)&&(a>0))) {
+    cout<<b<<'/'<<a<<endl;
+    k=(n+b)/d;
+    ta=a; tb=b; a=c; b=d; c=k*c-ta; d=k*d-tb;
+}
+}
+
+
+int main(){
+int n;
+cout<<"Enter n: ";
+cin>>n;
+cout<<0<<'/'<<1<<endl;
+Farey (n, true);
+cout<<1<<'/'<<1<<endl;
+Farey2 (n, false);
+cout<<1<<'/'<<0<<endl;
+return 0;
+}
